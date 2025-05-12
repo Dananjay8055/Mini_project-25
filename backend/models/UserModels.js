@@ -1,28 +1,32 @@
 import mongoose from "mongoose";
 
 const roleSchema = new mongoose.Schema({
+  roleID: { type: Number, required: true, unique: true }, // e.g. 'student', 'mentor', 'admin'
   name: { type: String, required: true, unique: true }, // e.g. 'student', 'mentor', 'admin'
 });
 const Role = mongoose.model("Role", roleSchema);
 
 // Define the User schema & model
 const userSchema = new mongoose.Schema({
-  username: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
+  // password: { type: String, required: true },
+  _id: { type: String, required: true,unique:true },
+  // userID :{ type: String, required: true,unique:true},
+  name: {type:String, required:true},
   email: { type: String, required: true },
   phone: String,
-  gender: String,
-  dob: Date,
+  gender: {type:String},
+  dob: {type:Date,required:true},
+  address: String,
   roleID: { type: mongoose.Schema.Types.ObjectId, ref: "Role", required: true },
   isActive: { type: Boolean, default: true },
 });
 const User = mongoose.model("User", userSchema);
 // Define the Designation schema & model
-const designationSchema = new mongoose.Schema({
-  title: { type: String, required: true }, // e.g., 'Mentor', 'HOD', 'Dean'
-  roleID: { type: mongoose.Schema.Types.ObjectId, ref: "Role", required: true }, // Inherits permissions from Role
-});
-const Designation = mongoose.model("Designation", designationSchema);
+// const designationSchema = new mongoose.Schema({
+//   title: { type: String, required: true }, // e.g., 'Mentor', 'HOD', 'Dean'
+//   roleID: { type: mongoose.Schema.Types.ObjectId, ref: "Role", required: true }, // Inherits permissions from Role
+// });
+// const Designation = mongoose.model("Designation", designationSchema);
 // Define the Mentor schema & model
 const mentorSchema = new mongoose.Schema({
   user: {
@@ -49,7 +53,6 @@ const studentSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  address: String,
   section: { type: mongoose.Schema.Types.ObjectId, ref: "Section" },
   semester: Number,
   deptID: { type: mongoose.Schema.Types.ObjectId, ref: "Department" },
@@ -59,4 +62,4 @@ const studentSchema = new mongoose.Schema({
 const Student = mongoose.model("Student", studentSchema);
 
 
-export {Role, User, Designation, Mentor, Student};
+export {Role, User, Mentor, Student};

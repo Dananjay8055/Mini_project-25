@@ -2,10 +2,12 @@ import mongoose from "mongoose";
 
 // Define the Permission schema & model
 const permissionSchema = new mongoose.Schema({
-  code: { type: String, required: true }, // e.g. 'view_student', 'approve_leave'
-  description: String,
+  code: { type: Number, required: true }, // e.g. 'view_student', 'approve_leave'
+  description: { type: String, required: true }, // Optional: Add 'required' if needed
 });
-const Permission = mongoose.model("Permission", permissionSchema);
+
+// Check if the Permission model is already defined
+const Permission = mongoose.models.Permission || mongoose.model("Permission", permissionSchema);
 
 // Define RolePermission as a mapping between Role and Permission
 const rolePermissionSchema = new mongoose.Schema({
@@ -18,13 +20,19 @@ const rolePermissionSchema = new mongoose.Schema({
 });
 // Ensure uniqueness on the combination
 rolePermissionSchema.index({ roleID: 1, permissionID: 1 }, { unique: true });
-const RolePermission = mongoose.model("RolePermission", rolePermissionSchema);
+const RolePermission =
+  mongoose.models.RolePermission ||
+  mongoose.model("RolePermission", rolePermissionSchema);
+
 // Define the Designation schema & model
 const designationSchema = new mongoose.Schema({
-  title: { type: String, required: true }, // e.g., 'Mentor', 'HOD', 'Dean'
+  degnId : {type:Number, required:true ,unique:true},
+  name: { type: String, required: true }, // e.g., 'Mentor', 'HOD', 'Dean'
   roleID: { type: mongoose.Schema.Types.ObjectId, ref: "Role", required: true }, // Inherits permissions from Role
 });
-const Designation = mongoose.model("Designation", designationSchema);
+
+// Check if the Designation model is already defined
+const Designation = mongoose.models.Designation || mongoose.model("Designation", designationSchema);
 
 // Define DesignationPermission as a mapping between Designation and Permission
 const designationPermissionSchema = new mongoose.Schema({
@@ -39,14 +47,10 @@ const designationPermissionSchema = new mongoose.Schema({
     required: true,
   },
 });
-designationPermissionSchema.index(
-  { designationID: 1, permissionID: 1 },
-  { unique: true }
-);
-const DesignationPermission = mongoose.model(
-  "DesignationPermission",
-  designationPermissionSchema
-);
+designationPermissionSchema.index({ designationID: 1, permissionID: 1 }, { unique: true });
 
+const DesignationPermission =
+  mongoose.models.DesignationPermission ||
+  mongoose.model("DesignationPermission", designationPermissionSchema);
 
-export {}
+export { Permission, RolePermission, Designation, DesignationPermission };

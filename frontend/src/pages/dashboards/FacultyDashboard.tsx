@@ -37,7 +37,7 @@ const FacultyDashboard = () => {
             </CardContent>
           </Card>
           
-          <Card className="card-hover">
+          {/* <Card className="card-hover">
             <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
               <CardTitle className="text-sm font-medium">Upcoming Classes</CardTitle>
               <Calendar className="h-4 w-4 text-azure-600" />
@@ -46,9 +46,9 @@ const FacultyDashboard = () => {
               <div className="text-2xl font-bold">3</div>
               <p className="text-xs text-muted-foreground">Next: Today at 2:00 PM</p>
             </CardContent>
-          </Card>
+          </Card> */}
           
-          <Card className="card-hover">
+          {/* <Card className="card-hover">
             <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
               <CardTitle className="text-sm font-medium">Pending Grades</CardTitle>
               <FileText className="h-4 w-4 text-azure-600" />
@@ -57,13 +57,13 @@ const FacultyDashboard = () => {
               <div className="text-2xl font-bold">28</div>
               <p className="text-xs text-muted-foreground">Due in 3 days</p>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
         
         {/* Main Dashboard Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Today's Schedule */}
-          <Card>
+          {/* <Card>
             <CardHeader>
               <CardTitle>Today's Schedule</CardTitle>
             </CardHeader>
@@ -100,7 +100,7 @@ const FacultyDashboard = () => {
                 ))}
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
           
           {/* Recent Assignments */}
           <Card>
@@ -134,7 +134,7 @@ const FacultyDashboard = () => {
           </Card>
           
           {/* Student Notifications */}
-          <Card>
+          {/* <Card>
             <CardHeader>
               <CardTitle>Student Notifications</CardTitle>
             </CardHeader>
@@ -163,7 +163,7 @@ const FacultyDashboard = () => {
                 ))}
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
       </div>
     </DashboardLayout>

@@ -6,6 +6,16 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { format } from "date-fns"
+import { Calendar as CalendarIcon } from "lucide-react"
+ 
+import { cn } from "@/lib/utils"
+import { Calendar } from "@/components/ui/calendar"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
 import {
   Select,
   SelectContent,
@@ -38,6 +48,7 @@ const NewUser = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone:"",
     role: 'student',
     bio: '',
   });
@@ -107,6 +118,7 @@ const NewUser = () => {
       .toUpperCase();
   };
 
+  const [date, setDate] = React.useState<Date>()
   return (
     <DashboardLayout>
       <div className="space-y-6">
@@ -133,9 +145,9 @@ const NewUser = () => {
             </CardHeader>
             <CardContent className="space-y-6">
               {/* Avatar Upload */}
-              <div className="flex flex-col items-center justify-center gap-4">
+              {/* <div className="flex flex-col items-center justify-center gap-4">
                 <div className="relative group">
-                  <Avatar className="h-24 w-24">
+                   <Avatar className="h-24 w-24">
                     {avatarPreview ? (
                       <img src={avatarPreview} alt="Avatar Preview" className="h-full w-full object-cover" />
                     ) : (
@@ -143,7 +155,7 @@ const NewUser = () => {
                         {formData.name ? getInitials(formData.name) : <User size={32} />}
                       </AvatarFallback>
                     )}
-                  </Avatar>
+                  </Avatar> 
                   <label 
                     htmlFor="avatar-upload" 
                     className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white rounded-full opacity-0 group-hover:opacity-100 cursor-pointer transition-opacity"
@@ -159,7 +171,7 @@ const NewUser = () => {
                   />
                 </div>
                 <span className="text-sm text-muted-foreground">Click to upload avatar</span>
-              </div>
+              </div> */}
 
               {/* Name */}
               <div className="space-y-2">
@@ -173,7 +185,6 @@ const NewUser = () => {
                   required
                 />
               </div>
-              
               {/* Email */}
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
@@ -187,7 +198,59 @@ const NewUser = () => {
                   required
                 />
               </div>
+              <div className="space-y-2">
+                <Label htmlFor="name">Phone</Label>
+                <Input 
+                  id="phone" 
+                  name="phone"
+                  placeholder="Enter user's phone" 
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="role">Gender</Label>
+                <Select 
+                  value={formData.role} 
+                  onValueChange={handleRoleChange}
+                  required
+                >
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select role" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="Male">Male</SelectItem>
+                    <SelectItem value="Female">Female</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
               
+              <div className="space-y-2">
+                <Label htmlFor="role">Date of Birth</Label><br/>
+                <Popover>
+      <PopoverTrigger asChild>
+        <Button
+          variant={"outline"}
+          className={cn(
+            "w-[280px] justify-start text-left font-normal",
+            !date && "text-muted-foreground"
+          )}
+        >
+          <CalendarIcon className="mr-2 h-4 w-4" />
+          {date ? format(date, "PPP") : <span>Pick a date</span>}
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-auto p-0">
+        <Calendar
+          mode="single"
+          selected={date}
+          onSelect={setDate}
+          initialFocus
+        />
+      </PopoverContent>
+    </Popover>
+                </div>
               {/* Role */}
               <div className="space-y-2">
                 <Label htmlFor="role">Role</Label>
@@ -200,15 +263,15 @@ const NewUser = () => {
                     <SelectValue placeholder="Select role" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="admin">Administrator</SelectItem>
-                    <SelectItem value="faculty">Faculty</SelectItem>
-                    <SelectItem value="student">Student</SelectItem>
+                    <SelectItem value="100">Administrator</SelectItem>
+                    <SelectItem value="200">Faculty</SelectItem>
+                    <SelectItem value="300">Student</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
               
               {/* Bio */}
-              <div className="space-y-2">
+              {/* <div className="space-y-2">
                 <Label htmlFor="bio">Bio</Label>
                 <Textarea 
                   id="bio" 
@@ -218,7 +281,7 @@ const NewUser = () => {
                   onChange={handleChange}
                   className="min-h-32"
                 />
-              </div>
+              </div> */}
             </CardContent>
             <CardFooter className="flex justify-between">
               <Button 

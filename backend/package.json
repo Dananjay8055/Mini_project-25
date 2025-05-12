@@ -7,6 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
+    "seed": "node seeds/seed.js",
     "dev": "nodemon src/index.js"
   },
   "author": "1NH23CD041,1NH23CD049",
@@ -16,7 +17,8 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mongoose": "^8.13.2",
-    "node-appwrite": "^15.0.1"
+    "node-appwrite": "^15.0.1",
+    "nodemailer": "^6.10.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"

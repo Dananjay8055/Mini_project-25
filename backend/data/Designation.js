@@ -1,26 +1,32 @@
-export const Designation ={
+export const designation ={
     201:{
-        "title":"Principal",
-        "permissions":[1001,2001,7002]
+        "name":"Principal",
+        "role":200,
+        "permissions":[1001,2001,]
     },
     202:{
-        "title":"Dean",
-        "permissions":[1001,2001,7002]
+        "name":"Dean",
+        "role":200,
+        "permissions":[1001,2001,]
     },
     203:{
-        "title":"HOD",
-        "permissions":[1001,7002]
+        "name":"HOD",
+        "role":200,
+        "permissions":[1001,]
     },
     204:{
-        "title":"Sernior Asst Professor",
-        "permissions":[7002]
+        "name":"Sernior Asst Professor",
+        "role":200,
+        "permissions":[]
     },
     205:{
-        "title":"Asst Professor",
-        "permissions":[7002]
+        "name":"Asst Professor",
+        "role":200,
+        "permissions":[]
     },
     206:{
-        "title":"Lecturer",
-        "permissions":[7002]
+        "name":"Lecturer",
+        "role":200,
+        "permissions":[]
     },
 }

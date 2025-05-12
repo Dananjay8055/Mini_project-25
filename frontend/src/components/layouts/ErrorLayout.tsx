@@ -46,7 +46,7 @@ const ErrorLayout: React.FC<ErrorLayoutProps> = ({
   };
   
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-background px-4">
       <div className="text-center max-w-md">
         {icon && (
           <div className="bg-muted p-6 rounded-full mx-auto w-24 h-24 flex items-center justify-center mb-6">
@@ -54,8 +54,8 @@ const ErrorLayout: React.FC<ErrorLayoutProps> = ({
           </div>
         )}
         
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">{title}</h1>
-        <p className="text-gray-600 mb-6">
+        <h1 className="text-3xl font-bold text-foreground mb-2">{title}</h1>
+        <p className="text-muted-foreground mb-6">
           {description}
         </p>
         

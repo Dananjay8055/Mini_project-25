@@ -49,7 +49,7 @@ export default function AppSidebar() {
   const getNavItems = () => {
     const commonItems = [
       { path: '/profile', label: 'Profile', icon: User },
-      { path: '/blog', label: 'Blog', icon: FileText },
+      // { path: '/blog', label: 'Blog', icon: FileText },
     ];
 
     switch (user?.role) {
@@ -58,28 +58,28 @@ export default function AppSidebar() {
           { path: '/admin', label: 'Dashboard', icon: Home },
           { path: '/admin/users', label: 'Users', icon: Users },
           { path: '/admin/courses', label: 'Courses', icon: Book },
-          { path: '/admin/classes', label: 'Classes', icon: BookOpen },
-          { path: '/admin/reports', label: 'Reports', icon: BarChart3 },
-          { path: '/admin/blog-management', label: 'Blog Management', icon: FileText },
-          { path: '/admin/settings', label: 'Settings', icon: Settings },
+          // { path: '/admin/classes', label: 'Classes', icon: BookOpen },
+          // { path: '/admin/reports', label: 'Reports', icon: BarChart3 },
+          // { path: '/admin/blog-management', label: 'Blog Management', icon: FileText },
+          // { path: '/admin/settings', label: 'Settings', icon: Settings },
           ...commonItems,
         ];
       case 'faculty':
         return [
           { path: '/faculty', label: 'Dashboard', icon: Home },
           { path: '/faculty/courses', label: 'My Courses', icon: Book },
-          { path: '/faculty/classes', label: 'My Classes', icon: BookOpen },
-          { path: '/faculty/grades', label: 'Manage Grades', icon: FileText },
+          // { path: '/faculty/classes', label: 'My Classes', icon: BookOpen },
+          // { path: '/faculty/grades', label: 'Manage Grades', icon: FileText },
           { path: '/faculty/students', label: 'My Students', icon: GraduationCap },
-          { path: '/faculty/calendar', label: 'Calendar', icon: Calendar },
+          // { path: '/faculty/calendar', label: 'Calendar', icon: Calendar },
           ...commonItems,
         ];
       case 'student':
         return [
           { path: '/student', label: 'Dashboard', icon: Home },
           { path: '/student/courses', label: 'My Courses', icon: Book },
-          { path: '/student/grades', label: 'My Grades', icon: FileText },
-          { path: '/student/calendar', label: 'Calendar', icon: Calendar },
+          // { path: '/student/grades', label: 'My Grades', icon: FileText },
+          // { path: '/student/calendar', label: 'Calendar', icon: Calendar },s
           ...commonItems,
         ];
       default:

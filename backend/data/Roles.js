@@ -1,11 +1,11 @@
-export const Roles = {
-  100: { Role: "Admin", Permission: [0] },
+export const roles = {
+  100: { name: "Admin", Permission: [0] },
   200: {
-    Role: "Teacher",
-    Permission: [1002, 2002, 7001, 7003],
+    name: "Teacher",
+    Permission: [1002, 2002, 7001, 7002,7003],
   },
   300: {
-    Role: "Student",
+    name: "Student",
     Permission: [1002, 2002, 7002],
   },
 };
