@@ -37,7 +37,7 @@ const AdminDashboard = () => {
             </CardContent>
           </Card>
           
-          <Card className="card-hover">
+          {/* <Card className="card-hover">
             <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
               <CardTitle className="text-sm font-medium">Events</CardTitle>
               <Calendar className="h-4 w-4 text-azure-600" />
@@ -46,9 +46,9 @@ const AdminDashboard = () => {
               <div className="text-2xl font-bold">12</div>
               <p className="text-xs text-muted-foreground">Next: Tomorrow</p>
             </CardContent>
-          </Card>
+          </Card> */}
           
-          <Card className="card-hover">
+          {/* <Card className="card-hover">
             <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
               <CardTitle className="text-sm font-medium">New Blog Posts</CardTitle>
               <FileText className="h-4 w-4 text-azure-600" />
@@ -57,13 +57,13 @@ const AdminDashboard = () => {
               <div className="text-2xl font-bold">9</div>
               <p className="text-xs text-muted-foreground">+3 this week</p>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
         
         {/* Main Dashboard Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Recent Activities */}
-          <Card className="lg:col-span-2">
+          {/* <Card className="lg:col-span-2">
             <CardHeader>
               <CardTitle>Recent Activities</CardTitle>
             </CardHeader>
@@ -73,8 +73,8 @@ const AdminDashboard = () => {
                   { id: 1, icon: <Users size={16} />, color: 'bg-blue-100 text-blue-600', action: 'New faculty member registered', time: '10 minutes ago' },
                   { id: 2, icon: <AlertCircle size={16} />, color: 'bg-red-100 text-red-600', action: 'System alert: Database backup completed', time: '25 minutes ago' },
                   { id: 3, icon: <BookOpen size={16} />, color: 'bg-green-100 text-green-600', action: 'New course added: Advanced Mathematics', time: '1 hour ago' },
-                  { id: 4, icon: <FileText size={16} />, color: 'bg-purple-100 text-purple-600', action: 'Blog post published by Dr. Johnson', time: '2 hours ago' },
-                  { id: 5, icon: <Calendar size={16} />, color: 'bg-amber-100 text-amber-600', action: 'Academic calendar updated for Fall Semester', time: '3 hours ago' },
+                  // { id: 4, icon: <FileText size={16} />, color: 'bg-purple-100 text-purple-600', action: 'Blog post published by Dr. Johnson', time: '2 hours ago' },
+                  // { id: 5, icon: <Calendar size={16} />, color: 'bg-amber-100 text-amber-600', action: 'Academic calendar updated for Fall Semester', time: '3 hours ago' },
                 ].map((activity) => (
                   <div key={activity.id} className="flex items-start">
                     <div className={`p-2 rounded-full ${activity.color} mr-3 mt-0.5`}>
@@ -88,7 +88,7 @@ const AdminDashboard = () => {
                 ))}
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
           
           {/* Quick Access */}
           <Card>
@@ -100,9 +100,9 @@ const AdminDashboard = () => {
                 {[
                   { id: 1, icon: <Users size={18} />, label: 'Manage Users', link: '/admin/users' },
                   { id: 2, icon: <BookOpen size={18} />, label: 'Course Management', link: '/admin/courses' },
-                  { id: 3, icon: <BarChart3 size={18} />, label: 'View Reports', link: '/admin/reports' },
-                  { id: 4, icon: <Calendar size={18} />, label: 'Academic Calendar', link: '/admin/calendar' },
-                  { id: 5, icon: <FileText size={18} />, label: 'Blog Management', link: '/blog/manage' },
+                  // { id: 3, icon: <BarChart3 size={18} />, label: 'View Reports', link: '/admin/reports' },
+                  // { id: 4, icon: <Calendar size={18} />, label: 'Academic Calendar', link: '/admin/calendar' },
+                  // { id: 5, icon: <FileText size={18} />, label: 'Blog Management', link: '/blog/manage' },
                   { id: 6, icon: <AlertCircle size={18} />, label: 'System Settings', link: '/admin/settings' },
                 ].map((item) => (
                   <a 

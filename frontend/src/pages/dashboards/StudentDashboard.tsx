@@ -40,7 +40,7 @@ const StudentDashboard = () => {
             </CardContent>
           </Card>
           
-          <Card className="card-hover">
+          {/* <Card className="card-hover">
             <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
               <CardTitle className="text-sm font-medium">Today's Classes</CardTitle>
               <Calendar className="h-4 w-4 text-azure-600" />
@@ -49,9 +49,9 @@ const StudentDashboard = () => {
               <div className="text-2xl font-bold">2</div>
               <p className="text-xs text-muted-foreground">Next: 2:00 PM - CS101</p>
             </CardContent>
-          </Card>
+          </Card> */}
           
-          <Card className="card-hover">
+          {/* <Card className="card-hover">
             <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
               <CardTitle className="text-sm font-medium">Announcements</CardTitle>
               <Bell className="h-4 w-4 text-azure-600" />
@@ -60,13 +60,13 @@ const StudentDashboard = () => {
               <div className="text-2xl font-bold">3</div>
               <p className="text-xs text-muted-foreground">New since yesterday</p>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
         
         {/* Main Dashboard Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Course Progress */}
-          <Card className="lg:col-span-2">
+          {/* <Card className="lg:col-span-2">
             <CardHeader>
               <CardTitle>Course Progress</CardTitle>
             </CardHeader>
@@ -95,10 +95,10 @@ const StudentDashboard = () => {
             <CardFooter>
               <Button variant="outline" size="sm" className="ml-auto">View All Courses</Button>
             </CardFooter>
-          </Card>
+          </Card> */}
           
           {/* Today's Schedule */}
-          <Card>
+          {/* <Card>
             <CardHeader>
               <CardTitle>Today's Schedule</CardTitle>
             </CardHeader>
@@ -138,8 +138,8 @@ const StudentDashboard = () => {
             <CardFooter>
               <Button variant="outline" size="sm" className="w-full">View Full Calendar</Button>
             </CardFooter>
-          </Card>
-        </div>
+          </Card> */}
+        </div> 
         
         {/* Upcoming Assignments */}
         <Card>
